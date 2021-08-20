@@ -3,7 +3,8 @@ class LandingPage {
   private searchBox = '[data-testid="SearchPanel-Input"]';
   private searchBoxHoverText = '[data-testid="ThreeWordAddress-Text"]';
   private addressSearchResultPanel = '[data-testid="SearchPanel-Item"]';
-    private searchResultElements = '[data-testid="ThreeWordAddress-Text"]';
+  private searchResultElements = '[data-testid="ThreeWordAddress-Text"]';
+  
   // Header Menu button & its options
   private headerMenu = '[data-testid="HeaderMenu-Menu_open"]';
   private languageSelection = '[data-testid="ThreeWordsLanguage"]';
@@ -57,7 +58,8 @@ class LandingPage {
   selectAddressFromSearchPanel(address: string): void {
     cy.get('.SearchPanel-LocationLine1')
       .should('be.visible')
-      .contains(address).parents('button')
+      .contains(address)
+      .parents('button')
       .click();
   }
 

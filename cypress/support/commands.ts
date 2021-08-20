@@ -1,4 +1,4 @@
-import LandingPage from '../pageObjects/landingpage.page';
+import LandingPage from '../pageObjects/homepage.page';
 
 export {};
 
@@ -14,6 +14,7 @@ declare global {
 
 function navigateToApplication(): void {
   cy.visit('/');
+  landPageObj.verifyPageTitle();
   landPageObj.getAcceptCookiesButton().click();
   landPageObj.getCloseDialogueButton().click();
   landPageObj.getClosePromptButton().click();

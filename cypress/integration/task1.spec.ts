@@ -1,4 +1,4 @@
-import LandingPage from '../pageObjects/landingpage.page';
+import LandingPage from '../pageObjects/homepage.page';
 
 describe('Task 1: Functional automation for web UI testing using Cypress', () => {
   const landPageObj = new LandingPage();
