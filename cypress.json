@@ -1,6 +1,7 @@
 {
   "$schema": "https://on.cypress.io/cypress.schema.json",
   "baseUrl": "https://what3words.com/",
+  "defaultCommandTimeout": 10000,
   "video": false,
   "screenshotOnRunFailure": true,
   "screenshotsFolder": "cypress/reports/mochareports/assets",
