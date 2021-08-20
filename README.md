@@ -9,7 +9,9 @@
 * Deploy on CircleCI
 
 
-## Mapping: Tasks vs Test Case Id 
+## Mapping: Tasks vs Test Case Id and test execution result
+
+![image](https://user-images.githubusercontent.com/25897622/130294251-d7991abd-9956-463c-a833-e16100fcb85c.png)
 
 
 ## How to SetUp Locally
@@ -54,8 +56,10 @@ npm run test-firefox
 
 ### HTML Report Folder Path:
 Please navigate to the below mentioned path in any file explorer & open the HTML report. 
-w3w-technical-test-anand/cypress/reports/mochareports/report.html
 
+```sh
+w3w-technical-test-anand/cypress/reports/mochareports/report.html
+```
 
 ### CircleCI Pipeline
 [Click here](https://app.circleci.com/pipelines/github/a-onkar/w3w-technical-test-anand) to view the project pipeline on CircleCI.
