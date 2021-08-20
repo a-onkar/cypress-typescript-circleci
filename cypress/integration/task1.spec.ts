@@ -4,7 +4,6 @@ describe('Task 1: Functional automation for web UI testing using Cypress', () =>
   const landPageObj = new LandingPage();
   let testdata: any;
   beforeEach(() => {
-    cy.viewport(1280, 720);
     cy.fixture('test-data').then((data) => (testdata = data));
   });
 
@@ -12,12 +11,14 @@ describe('Task 1: Functional automation for web UI testing using Cypress', () =>
     cy.navigateToApplication();
     landPageObj.getSearchBox().type(testdata.address1);
     landPageObj.selectAddressFromSearchResult(testdata.address1);
+    cy.screenshot();
   });
 
   it('TC_02', () => {
     cy.navigateToApplication();
     landPageObj.getSearchBox().type('Tower Bridge');
     landPageObj.selectAddressFromSearchPanel('Tower Bridge hotel');
+    cy.screenshot();
   });
 
   it('TC_03', () => {
@@ -28,17 +29,13 @@ describe('Task 1: Functional automation for web UI testing using Cypress', () =>
     landPageObj.getHeaderMenuCloseButton();
     landPageObj.getSearchBox().type('51.521251, -0.20358600');
     landPageObj.selectAddressFromSearchPanel('welche.tischtennis.bekannte');
-
-    // Resetting language to English for the next test case
-    landPageObj.getHeaderMenuButton().click();
-    landPageObj.getLanguageSelection().click();
-    landPageObj.selectLanguage(testdata.language.English);
-    landPageObj.getHeaderMenuCloseButton();
+    cy.screenshot();
   });
 
   it('TC_04', () => {
     cy.navigateToApplication();
     landPageObj.getSearchBox().type('hear.limited.frown.know');
     landPageObj.verifyWarningForWrongSearch();
+    cy.screenshot();
   });
 });
