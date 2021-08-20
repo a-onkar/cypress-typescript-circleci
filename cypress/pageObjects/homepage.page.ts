@@ -4,16 +4,15 @@ class LandingPage {
   private searchBoxHoverText = '[data-testid="ThreeWordAddress-Text"]';
   private addressSearchResultPanel = '[data-testid="SearchPanel-Item"]';
   private searchResultElements = '[data-testid="ThreeWordAddress-Text"]';
-  
-  // Header Menu button & its options
-  private headerMenu = '[data-testid="HeaderMenu-Menu_open"]';
-  private languageSelection = '[data-testid="ThreeWordsLanguage"]';
-  private headerMenuCloseButton = '[data-testid="HeaderMenu-Menu_close"]';
 
   //   Handling cookies
   private acceptCookiesButton = '[data-testid="AcceptAll"]';
   private onBoardDailogClose = '[data-testid="OnboardingDialog-Skip"]';
   private promptCloseButton = '[data-testid="OnboardingPrompt-CloseButton"]';
+
+  // Warning Lines
+  private warningLine1 = '.SearchPanel-Warning > div > div > div:nth-child(1)';
+  private warningLine2 = '.SearchPanel-Warning > div > div > div:nth-child(2)';
 
   verifyPageTitle(): void {
     cy.title().should('eq', this.pageTitle);
@@ -63,32 +62,14 @@ class LandingPage {
       .click();
   }
 
-  getHeaderMenuButton(): Cypress.Chainable<JQuery<HTMLElement>> {
-    return cy.get(this.headerMenu).should('be.visible');
+  verifyWarningLine1Text(text: string): void {
+    cy.get(this.warningLine1).should('have.text', text);
   }
 
-  getLanguageSelection(): Cypress.Chainable<JQuery<HTMLElement>> {
-    return cy.get(this.languageSelection).should('be.visible');
+  verifyWarningLine2Text(text: string): void {
+    cy.get(this.warningLine2).should('have.text', text);
   }
 
-  selectLanguage(name: string): void {
-    cy.get(name).should('be.visible').click();
-  }
-
-  getHeaderMenuCloseButton(): Cypress.Chainable<JQuery<HTMLElement>> {
-    return cy.get(this.headerMenuCloseButton).should('be.visible');
-  }
-
-  verifyWarningForWrongSearch(): void {
-    cy.get('.SearchPanel-Warning > div > div > div:nth-child(1)').should(
-      'have.text',
-      'No address found.'
-    );
-    cy.get('.SearchPanel-Warning > div > div > div:nth-child(2)').should(
-      'have.text',
-      'Please try searching for the town or nearby place and zoom in to find the what3words address.'
-    );
-  }
 }
 
 export default LandingPage;
