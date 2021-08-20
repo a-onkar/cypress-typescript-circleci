@@ -50,6 +50,12 @@ class LandingPage {
       });
   }
 
+  selectAddressFromSearchPanel(address: string): void {
+    cy.get(this.addressSearchResultPanel)
+      .should('be.visible')
+      .contains(address)
+      .click();
+  }
   getHeaderMenuButton(): Cypress.Chainable<JQuery<HTMLElement>> {
     return cy.get(this.headerMenu).should('be.visible');
   }
