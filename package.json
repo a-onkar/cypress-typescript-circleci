@@ -1,0 +1,19 @@
+{
+  "name": "w3w-test-anand",
+  "version": "1.0.0",
+  "description": "* Understand the product by exploratory testing & given test cases.\r * Setup Cypress Framework.\r * Create page object design pattern\r * Design test scripts\r * Deploy on CircleCI",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/a-onkar/w3w-technical-test-anand.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/a-onkar/w3w-technical-test-anand/issues"
+  },
+  "homepage": "https://github.com/a-onkar/w3w-technical-test-anand#readme"
+}
