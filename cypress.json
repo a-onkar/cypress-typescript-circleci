@@ -1,6 +1,6 @@
 {
   "$schema": "https://on.cypress.io/cypress.schema.json",
-  "baseUrl": "https://demoqa.com/",
+  "baseUrl": "https://what3words.com/",
   "video": false,
   "screenshotOnRunFailure": true,
   "screenshotsFolder": "cypress/reports/mochareports/assets",
