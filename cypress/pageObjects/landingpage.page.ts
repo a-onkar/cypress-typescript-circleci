@@ -3,6 +3,7 @@ class LandingPage {
   private searchBox = '[data-testid="SearchPanel-Input"]';
   private searchBoxHoverText = '[data-testid="ThreeWordAddress-Text"]';
   private headerMenu = '[data-testid="HeaderMenu-Menu_open"]';
+  private addressSearchResultPanel = '[data-testid="SearchPanel-Item"]';
 
   //   Handling cookies
   private acceptCookiesButton = '[data-testid="AcceptAll"]';
@@ -25,13 +26,28 @@ class LandingPage {
     return cy.get(this.promptCloseButton).should('be.visible');
   }
 
-  removeSearchBoxHoverText(): Cypress.Chainable<JQuery<HTMLElement>> {
-    return cy.get(this.searchBoxHoverText).should('be.visible').click();
+  removeSearchBoxHoverText(): void {
+    cy.get(this.searchBoxHoverText).should('be.visible').click();
   }
 
   getSearchBox(): Cypress.Chainable<JQuery<HTMLElement>> {
     this.removeSearchBoxHoverText();
     return cy.get(this.searchBox).should('be.visible');
+  }
+
+  selectAddressFromSearchResult(address: string): void {
+    cy.get(this.addressSearchResultPanel)
+      .should('be.visible')
+      .find('[data-testid="ThreeWordAddress-Text"]')
+      .each(($list, index) => {
+        const addrs = $list.text();
+        if (addrs === address) {
+          cy.get(this.addressSearchResultPanel)
+            .find('[data-testid="ThreeWordAddress-Text"]')
+            .eq(index)
+            .click();
+        }
+      });
   }
 
   getHeaderMenuButton(): Cypress.Chainable<JQuery<HTMLElement>> {

@@ -10,6 +10,7 @@ describe('Task 1: Functional automation for web UI testing using Cypress', () =>
 
   it('TC_01', () => {
     cy.navigateToApplication();
-    landPageObj.getSearchBox().type('certified.potato.vine');
+    landPageObj.getSearchBox().type(testdata.address1);
+    landPageObj.selectAddressFromSearchResult(testdata.address1);
   });
 });
