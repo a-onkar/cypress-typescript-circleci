@@ -8,7 +8,7 @@ export default class ActionsTab {
     private whatsappButton = '[data-testid="ButtonIcon-whatsapp"]';
     private twitterButton = '[data-testid="ButtonIcon-twitter"]';
     private copyLinkButton = '[data-testid="ButtonIcon-link"]';
-    private emailButton = '[data-testid="ButtonIcon-twitter"]';
+    private emailButton = '[data-testid="ButtonIcon-email"]';
   
     // Navigate tab elements
     private navigateButton = '[data-testid="ActionPanel-Navigate"]';

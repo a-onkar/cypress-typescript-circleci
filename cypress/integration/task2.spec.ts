@@ -15,16 +15,17 @@ describe('Task 2: Share - action tab functionality testing using Cypress', () =>
     landPageObj.selectAddressFromCodeSearchResult(testdata.codeAddress);
     actionsObj.getShareButton().click();
 
-    // Setting permission in browser to read cpoied text
-    cy.wrap(
-      Cypress.automation('remote:debugger:protocol', {
-        command: 'Browser.grantPermissions',
-        params: {
-          permissions: ['clipboardReadWrite', 'clipboardSanitizedWrite'],
-          origin: window.location.origin,
-        },
-      })
-    );
+    // Setting permission in browser to read copied text. This line should be commented while running on CircleCI.
+    // cy.wrap(
+    //   Cypress.automation('remote:debugger:protocol', {
+    //     command: 'Browser.grantPermissions',
+    //     params: {
+    //       permissions: ['clipboardReadWrite', 'clipboardSanitizedWrite'],
+    //       origin: window.location.origin,
+    //     },
+    //   })
+    // );
+
     // Cliking the Copy button
     actionsObj.getCopyButton().click();
     // Giving permission to read clipboard
