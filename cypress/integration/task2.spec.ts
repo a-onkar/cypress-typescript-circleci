@@ -16,15 +16,15 @@ describe('Task 2: Share - action tab functionality testing using Cypress', () =>
     actionsObj.getShareButton().click();
 
     // Setting permission in browser to read cpoied text
-    cy.wrap(
-      Cypress.automation('remote:debugger:protocol', {
-        command: 'Browser.grantPermissions',
-        params: {
-          permissions: ['clipboardReadWrite', 'clipboardSanitizedWrite'],
-          origin: window.location.origin,
-        },
-      })
-    );
+    // cy.wrap(
+    //   Cypress.automation('remote:debugger:protocol', {
+    //     command: 'Browser.grantPermissions',
+    //     params: {
+    //       permissions: ['clipboardReadWrite', 'clipboardSanitizedWrite'],
+    //       origin: window.location.origin,
+    //     },
+    //   })
+    // );
     // Cliking the Copy button
     actionsObj.getCopyButton().click();
     // Giving permission to read clipboard
