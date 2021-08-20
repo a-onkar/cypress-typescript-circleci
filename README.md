@@ -8,7 +8,9 @@
 * Deploy on CircleCI
 
 
-## Mapping: Tasks vs Test Case Id 
+## Mapping: Tasks vs Test Case Id and test execution result
+
+![image](https://user-images.githubusercontent.com/25897622/130294251-d7991abd-9956-463c-a833-e16100fcb85c.png)
 
 
 ## How to SetUp Locally
