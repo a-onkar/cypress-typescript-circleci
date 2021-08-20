@@ -76,6 +76,17 @@ class LandingPage {
   getHeaderMenuCloseButton(): Cypress.Chainable<JQuery<HTMLElement>> {
     return cy.get(this.headerMenuCloseButton).should('be.visible');
   }
+
+  verifyWarningForWrongSearch(): void {
+    cy.get('.SearchPanel-Warning > div > div > div:nth-child(1)').should(
+      'have.text',
+      'No address found.'
+    );
+    cy.get('.SearchPanel-Warning > div > div > div:nth-child(2)').should(
+      'have.text',
+      'Please try searching for the town or nearby place and zoom in to find the what3words address.'
+    );
+  }
 }
 
 export default LandingPage;

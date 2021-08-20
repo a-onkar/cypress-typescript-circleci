@@ -22,11 +22,23 @@ describe('Task 1: Functional automation for web UI testing using Cypress', () =>
 
   it('TC_03', () => {
     cy.navigateToApplication();
-    landPageObj.getHeaderMenuButton().click()
-    landPageObj.getLanguageSelection().click()
-    landPageObj.selectLanguage(testdata.language.German)
+    landPageObj.getHeaderMenuButton().click();
+    landPageObj.getLanguageSelection().click();
+    landPageObj.selectLanguage(testdata.language.German);
     landPageObj.getHeaderMenuCloseButton();
     landPageObj.getSearchBox().type('51.521251, -0.20358600');
     landPageObj.selectAddressFromSearchPanel('welche.tischtennis.bekannte');
+
+    // Resetting language to English for the next test case
+    landPageObj.getHeaderMenuButton().click();
+    landPageObj.getLanguageSelection().click();
+    landPageObj.selectLanguage(testdata.language.English);
+    landPageObj.getHeaderMenuCloseButton();
+  });
+
+  it('TC_04', () => {
+    cy.navigateToApplication();
+    landPageObj.getSearchBox().type('hear.limited.frown.know');
+    landPageObj.verifyWarningForWrongSearch();
   });
 });
