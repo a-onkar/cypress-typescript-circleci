@@ -1,9 +1,5 @@
 describe('Task 1: Functional automation for web UI testing using Cypress', () => {
-
-  before(() => {
-    cy.clearCookies();
-  });
-
+ 
   let testdata: any;
   beforeEach(() => {
     cy.viewport(1280, 720);
@@ -11,6 +7,6 @@ describe('Task 1: Functional automation for web UI testing using Cypress', () =>
   });
 
   it('TC_01', () => {
-    
+    cy.navigateToApplication();
   });
 });

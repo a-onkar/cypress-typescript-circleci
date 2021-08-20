@@ -1,6 +1,8 @@
+import LandingPage from '../pageObjects/landingpage.page';
+
 export {};
 
-// Different ways to Declare & Define custom commands
+const landPageObj = new LandingPage();
 
 declare global {
   namespace Cypress {
@@ -11,6 +13,9 @@ declare global {
 }
 
 function navigateToApplication(): void {
-  cy.visit('/')
+  cy.visit('/');
+  landPageObj.getAcceptCookiesButton().click();
+  landPageObj.getCloseDialogueButton().click();
+  landPageObj.getClosePromptButton().click();
 }
 Cypress.Commands.add('navigateToApplication', navigateToApplication);
