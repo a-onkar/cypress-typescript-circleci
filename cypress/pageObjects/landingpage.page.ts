@@ -55,9 +55,9 @@ class LandingPage {
   }
 
   selectAddressFromSearchPanel(address: string): void {
-    cy.get(this.addressSearchResultPanel)
+    cy.get('.SearchPanel-LocationLine1')
       .should('be.visible')
-      .contains(address)
+      .contains(address).parents('button')
       .click();
   }
 
