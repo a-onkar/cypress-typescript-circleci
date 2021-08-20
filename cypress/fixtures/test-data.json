@@ -1,3 +1,6 @@
 {
-  "address1": "certified.potato.vine"
+  "address1": "certified.potato.vine",
+  "language": {
+    "German": "[data-testid='Language-Deutsch']"
+  }
 }

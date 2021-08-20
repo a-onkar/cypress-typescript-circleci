@@ -2,8 +2,12 @@ class LandingPage {
   private pageTitle = 'what3words /// The simplest way to talk about location';
   private searchBox = '[data-testid="SearchPanel-Input"]';
   private searchBoxHoverText = '[data-testid="ThreeWordAddress-Text"]';
-  private headerMenu = '[data-testid="HeaderMenu-Menu_open"]';
   private addressSearchResultPanel = '[data-testid="SearchPanel-Item"]';
+
+  // Header Menu button & its options
+  private headerMenu = '[data-testid="HeaderMenu-Menu_open"]';
+  private languageSelection = '[data-testid="ThreeWordsLanguage"]';
+  private headerMenuCloseButton = '[data-testid="HeaderMenu-Menu_close"]';
 
   //   Handling cookies
   private acceptCookiesButton = '[data-testid="AcceptAll"]';
@@ -56,8 +60,21 @@ class LandingPage {
       .contains(address)
       .click();
   }
+
   getHeaderMenuButton(): Cypress.Chainable<JQuery<HTMLElement>> {
     return cy.get(this.headerMenu).should('be.visible');
+  }
+
+  getLanguageSelection(): Cypress.Chainable<JQuery<HTMLElement>> {
+    return cy.get(this.languageSelection).should('be.visible');
+  }
+
+  selectLanguage(name: string): void {
+    cy.get(name).should('be.visible').click();
+  }
+
+  getHeaderMenuCloseButton(): Cypress.Chainable<JQuery<HTMLElement>> {
+    return cy.get(this.headerMenuCloseButton).should('be.visible');
   }
 }
 
