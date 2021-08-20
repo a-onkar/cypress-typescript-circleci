@@ -1,5 +1,6 @@
 ## Quality Assurance - Technical test
 
+
 ### Plan & Strategy:
 * Understand the product by exploratory testing with help of given test scenarios.
 * Setup Cypress Framework.
@@ -20,6 +21,7 @@
 npm install
 ```
 
+
 ### Open Cypress Test Runner
 
 ```sh
@@ -32,6 +34,7 @@ or
 npx cypress open
 ```
 
+
 ### Run Cypress Tests in Headless Mode
 
 ```sh
@@ -39,10 +42,13 @@ npm run cy:run-chrome
 npm run cy:run-firefox
 ```
 
+
 ### Run Cypress Tests in Headless Mode & Generate HTML Report
+
 ```sh
-npm run cy:run-chrome
-npm run cy:run-firefox
+npm run test
+npm run test-chrome
+npm run test-firefox
 ```
 
 
