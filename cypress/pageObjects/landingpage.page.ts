@@ -3,7 +3,7 @@ class LandingPage {
   private searchBox = '[data-testid="SearchPanel-Input"]';
   private searchBoxHoverText = '[data-testid="ThreeWordAddress-Text"]';
   private addressSearchResultPanel = '[data-testid="SearchPanel-Item"]';
-
+    private searchResultElements = '[data-testid="ThreeWordAddress-Text"]';
   // Header Menu button & its options
   private headerMenu = '[data-testid="HeaderMenu-Menu_open"]';
   private languageSelection = '[data-testid="ThreeWordsLanguage"]';
@@ -42,12 +42,12 @@ class LandingPage {
   selectAddressFromSearchResult(address: string): void {
     cy.get(this.addressSearchResultPanel)
       .should('be.visible')
-      .find('[data-testid="ThreeWordAddress-Text"]')
+      .find(this.searchResultElements)
       .each(($list, index) => {
         const addrs = $list.text();
         if (addrs === address) {
           cy.get(this.addressSearchResultPanel)
-            .find('[data-testid="ThreeWordAddress-Text"]')
+            .find(this.searchResultElements)
             .eq(index)
             .click();
         }

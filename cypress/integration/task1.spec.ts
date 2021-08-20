@@ -14,7 +14,7 @@ describe('Task 1: Functional automation for web UI testing using Cypress', () =>
     cy.screenshot();
   });
 
-  it('TC_02', () => {
+  it.only('TC_02', () => {
     cy.navigateToApplication();
     landPageObj.getSearchBox().type('Tower Bridge');
     landPageObj.selectAddressFromSearchPanel('Tower Bridge hotel');
