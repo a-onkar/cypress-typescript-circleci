@@ -1,18 +1,20 @@
 class LandingPage {
   private pageTitle = 'what3words /// The simplest way to talk about location';
-  private searchBox = '[data-testid="SearchPanel-Input"]';
+
+  // Search realated elements
   private searchBoxHoverText = '[data-testid="ThreeWordAddress-Text"]';
+  private searchBox = '[data-testid="SearchPanel-Input"]';
   private addressSearchResultPanel = '[data-testid="SearchPanel-Item"]';
-  private searchResultElements = '[data-testid="ThreeWordAddress-Text"]';
+  private addressCodeSearchResult = '[data-testid="ThreeWordAddress-Text"]'; //Multiple elements yielded
+  private addressWordSearchResult = '.SearchPanel-LocationLine1'; //Multiple elements yielded
+  // Warning Lines
+  private warningLine1 = '.SearchPanel-Warning > div > div > div:nth-child(1)';
+  private warningLine2 = '.SearchPanel-Warning > div > div > div:nth-child(2)';
 
   //   Handling cookies
   private acceptCookiesButton = '[data-testid="AcceptAll"]';
   private onBoardDailogClose = '[data-testid="OnboardingDialog-Skip"]';
   private promptCloseButton = '[data-testid="OnboardingPrompt-CloseButton"]';
-
-  // Warning Lines
-  private warningLine1 = '.SearchPanel-Warning > div > div > div:nth-child(1)';
-  private warningLine2 = '.SearchPanel-Warning > div > div > div:nth-child(2)';
 
   verifyPageTitle(): void {
     cy.title().should('eq', this.pageTitle);
@@ -39,23 +41,26 @@ class LandingPage {
     return cy.get(this.searchBox).should('be.visible');
   }
 
-  selectAddressFromSearchResult(address: string): void {
+  // This function is used to select address that is searched using 3 words code.
+  selectAddressFromCodeSearchResult(address: string): void {
     cy.get(this.addressSearchResultPanel)
-      .should('be.visible')
-      .find(this.searchResultElements)
+      .find(this.addressCodeSearchResult)
       .each(($list, index) => {
         const addrs = $list.text();
         if (addrs === address) {
           cy.get(this.addressSearchResultPanel)
-            .find(this.searchResultElements)
+            .find(this.addressCodeSearchResult)
             .eq(index)
             .click();
         }
       });
   }
 
-  selectAddressFromSearchPanel(address: string): void {
-    cy.get('.SearchPanel-LocationLine1')
+  // This function is used to select address that is searched using actual Word (not 3 string code).
+
+  selectAddressFromKeywordSearchResult(address: string): void {
+    cy.get(this.addressSearchResultPanel)
+      .find(this.addressWordSearchResult)
       .should('be.visible')
       .contains(address)
       .parents('button')
@@ -69,7 +74,6 @@ class LandingPage {
   verifyWarningLine2Text(text: string): void {
     cy.get(this.warningLine2).should('have.text', text);
   }
-
 }
 
 export default LandingPage;

@@ -11,8 +11,8 @@ describe('Task 2: Share - action tab functionality testing using Cypress', () =>
 
   it('TC_05', () => {
     cy.navigateToApplication();
-    landPageObj.getSearchBox().type(testdata.address1);
-    landPageObj.selectAddressFromSearchResult(testdata.address1);
+    landPageObj.getSearchBox().type(testdata.codeAddress);
+    landPageObj.selectAddressFromCodeSearchResult(testdata.codeAddress);
     actionsObj.getShareButton().click();
 
     // Setting permission in browser to read cpoied text

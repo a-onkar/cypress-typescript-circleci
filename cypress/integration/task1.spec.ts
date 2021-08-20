@@ -12,15 +12,15 @@ describe('Task 1: Functional automation for web UI testing using Cypress', () =>
 
   it('TC_01', () => {
     cy.navigateToApplication();
-    landPageObj.getSearchBox().type(testdata.address1);
-    landPageObj.selectAddressFromSearchResult(testdata.address1);
+    landPageObj.getSearchBox().type(testdata.codeAddress);
+    landPageObj.selectAddressFromCodeSearchResult(testdata.codeAddress);
     cy.screenshot();
   });
 
   it('TC_02', () => {
     cy.navigateToApplication();
     landPageObj.getSearchBox().type('Tower Bridge'); //Partial text so did not use fixtures
-    landPageObj.selectAddressFromSearchPanel('Tower Bridge hotel');
+    landPageObj.selectAddressFromKeywordSearchResult('Tower Bridge hotel');
     cy.screenshot();
   });
 
@@ -31,7 +31,7 @@ describe('Task 1: Functional automation for web UI testing using Cypress', () =>
     headerMenuObj.selectLanguage(testdata.language.German);
     headerMenuObj.getHeaderMenuCloseButton();
     landPageObj.getSearchBox().type('51.521251, -0.20358600');
-    landPageObj.selectAddressFromSearchPanel('welche.tischtennis.bekannte');
+    landPageObj.selectAddressFromKeywordSearchResult('welche.tischtennis.bekannte');
     cy.screenshot();
   });
 
