@@ -25,7 +25,7 @@ describe('Task 2: Share - action tab functionality testing using Cypress', () =>
     //     },
     //   })
     // );
-
+    
     // Cliking the Copy button
     actionsObj.getCopyButton().click();
     // Giving permission to read clipboard
