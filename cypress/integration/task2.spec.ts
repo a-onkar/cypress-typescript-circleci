@@ -25,15 +25,44 @@ describe('Task 2: Share - action tab functionality testing using Cypress', () =>
         },
       })
     );
+    // Cliking the Copy button
     actionsObj.getCopyButton().click();
+    // Giving permission to read clipboard
     cy.window()
       .its('navigator.permissions')
       .invoke('query', { name: 'clipboard-read' })
       .its('state')
       .then(cy.log);
+    // Reading the text copied in clipboard
     cy.window()
       .its('navigator.clipboard')
       .invoke('readText')
       .should('equal', 'https://w3w.co/certified.potato.vine');
+    //  Share settings link & text
+    actionsObj
+      .getShareSettingsLink()
+      .should('have.text', 'Customise share settings');
+    //  Facebook button & text
+    actionsObj
+      .getFacebookButton()
+      .children('div')
+      .should('have.text', 'Facebook');
+    //  Whatsapp button & text
+    actionsObj
+      .getWhatsAppButton()
+      .children('div')
+      .should('have.text', 'Whatsapp');
+    //  Twitter button & text
+    actionsObj
+      .getTwitterButton()
+      .children('div')
+      .should('have.text', 'Twitter');
+    //  Copy Link button & text
+    actionsObj
+      .getCopyLinkButton()
+      .children('div')
+      .should('have.text', 'Copy Link');
+    //  Email button & text
+    actionsObj.getEmailButton().children('div').should('have.text', 'Email');
   });
 });
