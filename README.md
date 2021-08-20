@@ -7,5 +7,54 @@
 * Design test scripts
 * Deploy on CircleCI
 
+
+## Mapping: Tasks vs Test Case Id 
+
+
+## How to SetUp Locally
+
+* Clone the repo
+* cd project_folder
+
+```sh
+npm install
+```
+
+### Open Cypress Test Runner
+
+```sh
+npm run cy:open
+```
+
+or
+
+```sh
+npx cypress open
+```
+
+### Run Cypress Tests in Headless Mode
+
+```sh
+npm run cy:run-chrome
+npm run cy:run-firefox
+```
+
+### Run Cypress Tests in Headless Mode & Generate HTML Report
+```sh
+npm run cy:run-chrome
+npm run cy:run-firefox
+```
+
+
 ### HTML Report Folder Path:
+Please navigate to the below mentioned path in any file explorer & open the HTML report. 
 w3w-technical-test-anand/cypress/reports/mochareports/report.html
+
+
+### CircleCI Pipeline
+[Click here](https://app.circleci.com/pipelines/github/a-onkar/w3w-technical-test-anand) to view the project pipeline on CircleCI.
+
+
+## Author
+
+👤 **Anandteerth Onkar**
