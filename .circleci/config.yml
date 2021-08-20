@@ -6,4 +6,5 @@ workflows:
     jobs:
       - cypress/run:
         store_artifacts: true
-        store_test_results: true
+      - store_test_results:
+        path: circleci/results
