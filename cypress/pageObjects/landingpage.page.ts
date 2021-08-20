@@ -1,4 +1,4 @@
-export default class LandingPage {
+class LandingPage {
   private pageTitle = 'what3words /// The simplest way to talk about location';
   private searchBox = '[data-testid="SearchPanel-Input"]';
   private headerMenu = '[data-testid="HeaderMenu-Menu_open"]';
@@ -15,3 +15,5 @@ export default class LandingPage {
     return cy.get(this.headerMenu).should('be.visible');
   }
 }
+
+export default LandingPage;
