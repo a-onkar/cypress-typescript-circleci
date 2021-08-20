@@ -4,7 +4,9 @@
   "description": "* Understand the product by exploratory testing & given test cases.\r * Setup Cypress Framework.\r * Create page object design pattern\r * Design test scripts\r * Deploy on CircleCI",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "cy:run-chrome": "cypress run --headless -b chrome",
+    "cy:run-firefox": "cypress run --headless -b firefox",
+    "cy:open": "cypress open"
   },
   "repository": {
     "type": "git",
