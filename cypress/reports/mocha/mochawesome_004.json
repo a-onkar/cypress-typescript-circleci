@@ -1,0 +1,164 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 4,
+    "passes": 4,
+    "pending": 0,
+    "failures": 0,
+    "start": "2021-08-21T15:19:14.739Z",
+    "end": "2021-08-21T15:19:43.463Z",
+    "duration": 28724,
+    "testsRegistered": 4,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "868a6d49-711e-4719-92dc-d1dbb89d4869",
+      "title": "",
+      "fullFile": "cypress/integration/task1.spec.ts",
+      "file": "cypress/integration/task1.spec.ts",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "d381e8ed-54fd-4b0b-b95c-a6d6f79fa512",
+          "title": "Task 1: Functional automation for web UI testing using Cypress",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "TC_01",
+              "fullTitle": "Task 1: Functional automation for web UI testing using Cypress TC_01",
+              "timedOut": null,
+              "duration": 8535,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.navigateToApplication();\nlandPageObj.getSearchBox().type(testdata.codeAddress);\nlandPageObj.selectAddressFromCodeSearchResult(testdata.codeAddress);\ncy.screenshot();",
+              "err": {},
+              "uuid": "0dfff1a5-5317-4448-9b00-21299b57efbe",
+              "parentUUID": "d381e8ed-54fd-4b0b-b95c-a6d6f79fa512",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "TC_02",
+              "fullTitle": "Task 1: Functional automation for web UI testing using Cypress TC_02",
+              "timedOut": null,
+              "duration": 6994,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.navigateToApplication();\nlandPageObj.getSearchBox().type('Tower Bridge'); //Partial text so did not use fixtures\nlandPageObj.selectAddressFromKeywordSearchResult('Tower Bridge hotel');\ncy.screenshot();",
+              "err": {},
+              "uuid": "feccfe5e-a846-4a90-8dea-be2bc0c920a3",
+              "parentUUID": "d381e8ed-54fd-4b0b-b95c-a6d6f79fa512",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "TC_03",
+              "fullTitle": "Task 1: Functional automation for web UI testing using Cypress TC_03",
+              "timedOut": null,
+              "duration": 6745,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.navigateToApplication();\nheaderMenuObj.getHeaderMenuButton().click();\nheaderMenuObj.getLanguageSelection().click();\nheaderMenuObj.selectLanguage(testdata.language.German);\nheaderMenuObj.getHeaderMenuCloseButton();\nlandPageObj.getSearchBox().type('51.521251, -0.20358600');\nlandPageObj.selectAddressFromKeywordSearchResult('welche.tischtennis.bekannte');\ncy.screenshot();",
+              "err": {},
+              "uuid": "f44509fb-2262-4562-96dc-d0ad473dffc2",
+              "parentUUID": "d381e8ed-54fd-4b0b-b95c-a6d6f79fa512",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "TC_04",
+              "fullTitle": "Task 1: Functional automation for web UI testing using Cypress TC_04",
+              "timedOut": null,
+              "duration": 6209,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.navigateToApplication();\nlandPageObj.getSearchBox().type('hear.limited.frown.know');\nlandPageObj.verifyWarningLine1Text('No address found.');\nlandPageObj.verifyWarningLine2Text('Please try searching for the town or nearby place and zoom in to find the what3words address.');\ncy.screenshot();",
+              "err": {},
+              "uuid": "a3588140-2876-441c-9c63-2ca7839e4b2e",
+              "parentUUID": "d381e8ed-54fd-4b0b-b95c-a6d6f79fa512",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "0dfff1a5-5317-4448-9b00-21299b57efbe",
+            "feccfe5e-a846-4a90-8dea-be2bc0c920a3",
+            "f44509fb-2262-4562-96dc-d0ad473dffc2",
+            "a3588140-2876-441c-9c63-2ca7839e4b2e"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 28483,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.2.2"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/reports/mocha",
+        "quite": true,
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "5.2.0"
+    }
+  }
+}

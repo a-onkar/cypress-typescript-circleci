@@ -1,0 +1,107 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2021-08-21T14:46:47.544Z",
+    "end": "2021-08-21T14:46:56.709Z",
+    "duration": 9165,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "ac06e6e3-279e-44c2-a2c3-270e59ee430f",
+      "title": "",
+      "fullFile": "cypress/integration/task2.spec.ts",
+      "file": "cypress/integration/task2.spec.ts",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "16e259c9-8e74-4cd8-9fe4-66f07a80749b",
+          "title": "Task 2: Share - action tab functionality testing using Cypress",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "TC_05",
+              "fullTitle": "Task 2: Share - action tab functionality testing using Cypress TC_05",
+              "timedOut": null,
+              "duration": 9021,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.navigateToApplication();\nlandPageObj.getSearchBox().type(testdata.codeAddress);\nlandPageObj.selectAddressFromCodeSearchResult(testdata.codeAddress);\nactionsObj.getShareButton().click();\n// Setting permission in browser to read copied text. This line should be commented while running on CircleCI.\ncy.wrap(Cypress.automation('remote:debugger:protocol', {\n    command: 'Browser.grantPermissions',\n    params: {\n        permissions: ['clipboardReadWrite', 'clipboardSanitizedWrite'],\n        origin: window.location.origin,\n    },\n}));\n// Cliking the Copy button\nactionsObj.getCopyButton().click();\n// Giving permission to read clipboard\ncy.window()\n    .its('navigator.permissions')\n    .invoke('query', { name: 'clipboard-read' })\n    .its('state')\n    .then(cy.log);\n// Reading the text copied in clipboard\ncy.window()\n    .its('navigator.clipboard')\n    .invoke('readText')\n    .should('equal', 'https://w3w.co/certified.potato.vine');\n//  Share settings link & text\nactionsObj\n    .getShareSettingsLink()\n    .should('have.text', 'Customise share settings');\n//  Facebook button & text\nactionsObj\n    .getFacebookButton()\n    .children('div')\n    .should('have.text', 'Facebook');\n//  Whatsapp button & text\nactionsObj\n    .getWhatsAppButton()\n    .children('div')\n    .should('have.text', 'Whatsapp');\n//  Twitter button & text\nactionsObj\n    .getTwitterButton()\n    .children('div')\n    .should('have.text', 'Twitter');\n//  Copy Link button & text\nactionsObj\n    .getCopyLinkButton()\n    .children('div')\n    .should('have.text', 'Copy Link');\n//  Email button & text\nactionsObj.getEmailButton().children('div').should('have.text', 'Email');",
+              "err": {},
+              "uuid": "b58350ce-1f94-449e-b98d-b27c9272edab",
+              "parentUUID": "16e259c9-8e74-4cd8-9fe4-66f07a80749b",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "b58350ce-1f94-449e-b98d-b27c9272edab"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 9021,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.2.2"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/reports/mocha",
+        "quite": true,
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "5.2.0"
+    }
+  }
+}

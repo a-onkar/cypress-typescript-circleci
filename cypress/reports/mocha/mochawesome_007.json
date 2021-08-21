@@ -1,0 +1,111 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "start": "2021-08-21T15:22:07.065Z",
+    "end": "2021-08-21T15:22:25.556Z",
+    "duration": 18491,
+    "testsRegistered": 1,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "75f9e1ff-93ba-4d51-bfc3-0a81072f5998",
+      "title": "",
+      "fullFile": "cypress/integration/task2.spec.ts",
+      "file": "cypress/integration/task2.spec.ts",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "72a1d99b-23b1-44b9-aa1e-5a732d4cd4bd",
+          "title": "Task 2: Share - action tab functionality testing using Cypress",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "TC_05",
+              "fullTitle": "Task 2: Share - action tab functionality testing using Cypress TC_05",
+              "timedOut": null,
+              "duration": 18394,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.navigateToApplication();\nlandPageObj.getSearchBox().type(testdata.codeAddress);\nlandPageObj.selectAddressFromCodeSearchResult(testdata.codeAddress);\nactionsObj.getShareButton().click();\n// Setting permission in browser to read copied text. This line should be commented while running on CircleCI.\n// cy.wrap(\n//   Cypress.automation('remote:debugger:protocol', {\n//     command: 'Browser.grantPermissions',\n//     params: {\n//       permissions: ['clipboardReadWrite', 'clipboardSanitizedWrite'],\n//       origin: window.location.origin,\n//     },\n//   })\n// );\n// Cliking the Copy button\nactionsObj.getCopyButton().click();\n// Giving permission to read clipboard\ncy.window()\n    .its('navigator.permissions')\n    .invoke('query', { name: 'clipboard-read' })\n    .its('state')\n    .then(cy.log);\n// Reading the text copied in clipboard\ncy.window()\n    .its('navigator.clipboard')\n    .invoke('readText')\n    .should('equal', 'https://w3w.co/certified.potato.vine');\n//  Share settings link & text\nactionsObj\n    .getShareSettingsLink()\n    .should('have.text', 'Customise share settings');\n//  Facebook button & text\nactionsObj\n    .getFacebookButton()\n    .children('div')\n    .should('have.text', 'Facebook');\n//  Whatsapp button & text\nactionsObj\n    .getWhatsAppButton()\n    .children('div')\n    .should('have.text', 'Whatsapp');\n//  Twitter button & text\nactionsObj\n    .getTwitterButton()\n    .children('div')\n    .should('have.text', 'Twitter');\n//  Copy Link button & text\nactionsObj\n    .getCopyLinkButton()\n    .children('div')\n    .should('have.text', 'Copy Link');\n//  Email button & text\nactionsObj.getEmailButton().children('div').should('have.text', 'Email');",
+              "err": {
+                "message": "TypeError: Cannot set property message of [object DOMException] which has only a getter",
+                "estack": "TypeError: Cannot set property message of [object DOMException] which has only a getter\n    at Module.modifyErrMsg (https://what3words.com/__cypress/runner/cypress_runner.js:160443:15)\n    at $Cy.retry (https://what3words.com/__cypress/runner/cypress_runner.js:152770:41)\n    at https://what3words.com/__cypress/runner/cypress_runner.js:141582:19\n    at tryCatcher (https://what3words.com/__cypress/runner/cypress_runner.js:13222:23)\n    at Promise._settlePromiseFromHandler (https://what3words.com/__cypress/runner/cypress_runner.js:11157:31)\n    at Promise._settlePromise (https://what3words.com/__cypress/runner/cypress_runner.js:11214:18)\n    at Promise._settlePromise0 (https://what3words.com/__cypress/runner/cypress_runner.js:11259:10)\n    at Promise._settlePromises (https://what3words.com/__cypress/runner/cypress_runner.js:11335:18)\n    at _drainQueueStep (https://what3words.com/__cypress/runner/cypress_runner.js:7929:12)\n    at _drainQueue (https://what3words.com/__cypress/runner/cypress_runner.js:7922:9)\n    at Async.../../node_modules/bluebird/js/release/async.js.Async._drainQueues (https://what3words.com/__cypress/runner/cypress_runner.js:7938:5)\n    at Async.drainQueues (https://what3words.com/__cypress/runner/cypress_runner.js:7808:14)",
+                "diff": null
+              },
+              "uuid": "300e02c7-0857-4a5a-bf79-17032621ff12",
+              "parentUUID": "72a1d99b-23b1-44b9-aa1e-5a732d4cd4bd",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "300e02c7-0857-4a5a-bf79-17032621ff12"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 18394,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.2.2"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/reports/mocha",
+        "quite": true,
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "5.2.0"
+    }
+  }
+}
