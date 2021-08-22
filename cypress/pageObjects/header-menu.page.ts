@@ -1,10 +1,14 @@
 class HeaderMenuPage {
-  
-  private headerMenu = '[data-testid="HeaderMenu-Menu_open"]';
-  private languageSelection = '[data-testid="ThreeWordsLanguage"]';
-  private headerMenuCloseButton = '[data-testid="HeaderMenu-Menu_close"]';
+  headerMenu: string;
+  headerMenuCloseButton: string;
+  languageSelection: string;
 
-  
+  constructor() {
+    this.headerMenu = '[data-testid="HeaderMenu-Menu_open"]';
+    this.headerMenuCloseButton = '[data-testid="HeaderMenu-Menu_close"]';
+    this.languageSelection = '[data-testid="ThreeWordsLanguage"]';
+  }
+
   getHeaderMenuButton(): Cypress.Chainable<JQuery<HTMLElement>> {
     return cy.get(this.headerMenu).should('be.visible');
   }
@@ -14,13 +18,12 @@ class HeaderMenuPage {
   }
 
   selectLanguage(name: string): void {
-    cy.get(name).should('be.visible').click();
+    cy.get(`[data-testid="Language-${name}"]`).should('be.visible').click();
   }
 
   getHeaderMenuCloseButton(): Cypress.Chainable<JQuery<HTMLElement>> {
     return cy.get(this.headerMenuCloseButton).should('be.visible');
   }
-
 }
 
 export default HeaderMenuPage;
