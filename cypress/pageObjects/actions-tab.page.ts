@@ -1,4 +1,6 @@
-export default class ActionsTab {
+import Homepage from "./homepage.page";
+
+export default class ActionsTab extends Homepage {
   shareTab: string;
   shareDescription: string;
   copyIcon: string;
@@ -12,6 +14,7 @@ export default class ActionsTab {
   saveTab: string;
 
   constructor() {
+    super();
     // Share tab elements
     this.shareTab = '[data-testid="ActionPanel-Share"]';
     this.shareDescription = '[data-testid="share-description"]';

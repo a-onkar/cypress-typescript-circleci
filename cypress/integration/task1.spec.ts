@@ -1,8 +1,7 @@
 import HeaderMenuPage from '../pageObjects/header-menu.page';
-import LandingPage from '../pageObjects/homepage.page';
+import Homepage from '../pageObjects/homepage.page';
 
 describe('Task 1: Functional automation for web UI testing using Cypress', () => {
-  const landPageObj = new LandingPage();
   const headerMenuObj = new HeaderMenuPage();
   let testdata: any;
 
@@ -12,15 +11,15 @@ describe('Task 1: Functional automation for web UI testing using Cypress', () =>
 
   it('TC_01', () => {
     cy.navigateToApplication();
-    landPageObj.getSearchBox().type(testdata.codeAddress);
-    landPageObj.selectAddressFromCodeSearchResult(testdata.codeAddress);
+    headerMenuObj.getSearchBox().type(testdata.codeAddress);
+    headerMenuObj.selectAddressFromCodeSearchResult(testdata.codeAddress);
     cy.screenshot();
   });
 
   it('TC_02', () => {
     cy.navigateToApplication();
-    landPageObj.getSearchBox().type('Tower Bridge'); //Partial text so did not use fixtures
-    landPageObj.selectAddressFromKeywordSearchResult('Tower Bridge hotel');
+    headerMenuObj.getSearchBox().type('Tower Bridge'); //Partial text so did not use fixtures
+    headerMenuObj.selectAddressFromKeywordSearchResult('Tower Bridge hotel');
     cy.screenshot();
   });
 
@@ -30,16 +29,16 @@ describe('Task 1: Functional automation for web UI testing using Cypress', () =>
     headerMenuObj.getLanguageSelection().click();
     headerMenuObj.selectLanguage('Deutsch');
     headerMenuObj.getHeaderMenuCloseButton();
-    landPageObj.getSearchBox().type('51.521251, -0.20358600');
-    landPageObj.selectAddressFromKeywordSearchResult('welche.tischtennis.bekannte');
+    headerMenuObj.getSearchBox().type('51.521251, -0.20358600');
+    headerMenuObj.selectAddressFromKeywordSearchResult('welche.tischtennis.bekannte');
     cy.screenshot();
   });
 
   it('TC_04', () => {
     cy.navigateToApplication();
-    landPageObj.getSearchBox().type('hear.limited.frown.know');
-    landPageObj.verifyWarningLine1Text('No address found.');
-    landPageObj.verifyWarningLine2Text('Please try searching for the town or nearby place and zoom in to find the what3words address.');
+    headerMenuObj.getSearchBox().type('hear.limited.frown.know');
+    headerMenuObj.verifyWarningLine1Text('No address found.');
+    headerMenuObj.verifyWarningLine2Text('Please try searching for the town or nearby place and zoom in to find the what3words address.');
     cy.screenshot();
   });
 });

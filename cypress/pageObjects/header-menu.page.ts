@@ -1,9 +1,12 @@
-class HeaderMenuPage {
+import Homepage from "./homepage.page";
+
+class HeaderMenuPage extends Homepage{
   headerMenu: string;
   headerMenuCloseButton: string;
   languageSelection: string;
 
   constructor() {
+    super();
     this.headerMenu = '[data-testid="HeaderMenu-Menu_open"]';
     this.headerMenuCloseButton = '[data-testid="HeaderMenu-Menu_close"]';
     this.languageSelection = '[data-testid="ThreeWordsLanguage"]';

@@ -1,4 +1,4 @@
-class LandingPage {
+class Homepage {
   pageTitle: string;
   searchBoxHoverText: string;
   searchBox: string;
@@ -87,4 +87,4 @@ class LandingPage {
   }
 }
 
-export default LandingPage;
+export default Homepage;

@@ -1,9 +1,8 @@
 import ActionsTab from '../pageObjects/actions-tab.page';
-import LandingPage from '../pageObjects/homepage.page';
+import Homepage from '../pageObjects/homepage.page';
 
 describe('Task 2: Share - action tab functionality testing using Cypress', () => {
-  const landPageObj = new LandingPage();
-  const actionsObj = new ActionsTab();
+   const actionsObj = new ActionsTab();
   let testdata: any;
   beforeEach(() => {
     cy.fixture('test-data').then((data) => (testdata = data));
@@ -11,8 +10,8 @@ describe('Task 2: Share - action tab functionality testing using Cypress', () =>
 
   it('TC_05', () => {
     cy.navigateToApplication();
-    landPageObj.getSearchBox().type(testdata.codeAddress);
-    landPageObj.selectAddressFromCodeSearchResult(testdata.codeAddress);
+    actionsObj.getSearchBox().type(testdata.codeAddress);
+    actionsObj.selectAddressFromCodeSearchResult(testdata.codeAddress);
     actionsObj.getShareTab().click();
 
     // Setting permission in browser to read copied text. This line should be commented while running on CircleCI.
