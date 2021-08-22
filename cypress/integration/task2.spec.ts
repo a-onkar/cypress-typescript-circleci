@@ -13,7 +13,7 @@ describe('Task 2: Share - action tab functionality testing using Cypress', () =>
     cy.navigateToApplication();
     landPageObj.getSearchBox().type(testdata.codeAddress);
     landPageObj.selectAddressFromCodeSearchResult(testdata.codeAddress);
-    actionsObj.getShareButton().click();
+    actionsObj.getShareTab().click();
 
     // Setting permission in browser to read copied text. This line should be commented while running on CircleCI.
     // cy.wrap(
@@ -25,9 +25,9 @@ describe('Task 2: Share - action tab functionality testing using Cypress', () =>
     //     },
     //   })
     // );
-    
+
     // Cliking the Copy button
-    actionsObj.getCopyButton().click();
+    actionsObj.getCopyIcon().click();
     // Giving permission to read clipboard
     cy.window()
       .its('navigator.permissions')
@@ -45,25 +45,22 @@ describe('Task 2: Share - action tab functionality testing using Cypress', () =>
       .should('have.text', 'Customise share settings');
     //  Facebook button & text
     actionsObj
-      .getFacebookButton()
+      .getFacebookIcon()
       .children('div')
       .should('have.text', 'Facebook');
     //  Whatsapp button & text
     actionsObj
-      .getWhatsAppButton()
+      .getWhatsAppIcon()
       .children('div')
       .should('have.text', 'Whatsapp');
     //  Twitter button & text
-    actionsObj
-      .getTwitterButton()
-      .children('div')
-      .should('have.text', 'Twitter');
+    actionsObj.getTwitterIcon().children('div').should('have.text', 'Twitter');
     //  Copy Link button & text
     actionsObj
-      .getCopyLinkButton()
+      .getCopyLinkIcon()
       .children('div')
       .should('have.text', 'Copy Link');
     //  Email button & text
-    actionsObj.getEmailButton().children('div').should('have.text', 'Email');
+    actionsObj.getEmailIcon().children('div').should('have.text', 'Email');
   });
 });
