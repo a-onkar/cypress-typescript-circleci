@@ -1,20 +1,32 @@
 class LandingPage {
-  private pageTitle = 'what3words /// The simplest way to talk about location';
+  pageTitle: string;
+  searchBoxHoverText: string;
+  searchBox: string;
+  addressSearchResultPanel: string;
+  addressCodeSearchResult: string;
+  addressWordSearchResult: string;
+  warningLine1: string;
+  warningLine2: string;
+  acceptCookiesButton: string;
+  onBoardDailogClose: string;
+  promptCloseButton: string;
 
-  // Search realated elements
-  private searchBoxHoverText = '[data-testid="ThreeWordAddress-Text"]';
-  private searchBox = '[data-testid="SearchPanel-Input"]';
-  private addressSearchResultPanel = '[data-testid="SearchPanel-Item"]';
-  private addressCodeSearchResult = '[data-testid="ThreeWordAddress-Text"]'; //Multiple elements yielded
-  private addressWordSearchResult = '.SearchPanel-LocationLine1'; //Multiple elements yielded
-  // Warning Lines
-  private warningLine1 = '.SearchPanel-Warning > div > div > div:nth-child(1)';
-  private warningLine2 = '.SearchPanel-Warning > div > div > div:nth-child(2)';
-
-  //   Handling cookies
-  private acceptCookiesButton = '[data-testid="AcceptAll"]';
-  private onBoardDailogClose = '[data-testid="OnboardingDialog-Skip"]';
-  private promptCloseButton = '[data-testid="OnboardingPrompt-CloseButton"]';
+  constructor() {
+    this.pageTitle = 'what3words /// The simplest way to talk about location';
+    //   Cookies related web elements
+    this.acceptCookiesButton = '[data-testid="AcceptAll"]';
+    this.onBoardDailogClose = '[data-testid="OnboardingDialog-Skip"]';
+    this.promptCloseButton = '[data-testid="OnboardingPrompt-CloseButton"]';
+    // Search realated web elements
+    this.searchBoxHoverText = '[data-testid="ThreeWordAddress-Text"]';
+    this.searchBox = '[data-testid="SearchPanel-Input"]';
+    this.addressSearchResultPanel = '[data-testid="SearchPanel-Item"]';
+    this.addressCodeSearchResult = '[data-testid="ThreeWordAddress-Text"]'; //Multiple elements yielded
+    this.addressWordSearchResult = '.SearchPanel-LocationLine1'; //Multiple elements yielded
+    // Warning Lines
+    this.warningLine1 = '.SearchPanel-Warning > div > div > div:nth-child(1)';
+    this.warningLine2 = '.SearchPanel-Warning > div > div > div:nth-child(2)';
+  }
 
   verifyPageTitle(): void {
     cy.title().should('eq', this.pageTitle);
@@ -57,7 +69,6 @@ class LandingPage {
   }
 
   // This function is used to select address that is searched using actual Word (not 3 string code).
-
   selectAddressFromKeywordSearchResult(address: string): void {
     cy.get(this.addressSearchResultPanel)
       .find(this.addressWordSearchResult)
