@@ -28,7 +28,7 @@ describe('Task 1: Functional automation for web UI testing using Cypress', () =>
     cy.navigateToApplication();
     headerMenuObj.getHeaderMenuButton().click();
     headerMenuObj.getLanguageSelection().click();
-    headerMenuObj.selectLanguage(testdata.language.German);
+    headerMenuObj.selectLanguage('Deutsch');
     headerMenuObj.getHeaderMenuCloseButton();
     landPageObj.getSearchBox().type('51.521251, -0.20358600');
     landPageObj.selectAddressFromKeywordSearchResult('welche.tischtennis.bekannte');

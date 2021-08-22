@@ -1,7 +1,3 @@
 {
-  "codeAddress": "certified.potato.vine",
-  "language": {
-    "German": "[data-testid='Language-Deutsch']",
-    "English": "[data-testid='Language-English']"
-  }
+  "codeAddress": "certified.potato.vine"
 }
