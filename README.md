@@ -62,7 +62,7 @@ w3w-technical-test-anand/cypress/reports/mochareports/report.html
 ```
 
 ### CircleCI Pipeline
-[Click here](https://app.circleci.com/pipelines/github/a-onkar/w3w-technical-test-anand) to view the project pipeline on CircleCI.
+Click this [Link](https://app.circleci.com/pipelines/github/a-onkar/cypress-typescript-circleci) to view the project pipeline on CircleCI.
 
 
 ## Author

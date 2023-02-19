@@ -19,14 +19,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/a-onkar/w3w-technical-test-anand.git"
+    "url": "https://github.com/a-onkar/cypress-typescript-circleci"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/a-onkar/w3w-technical-test-anand/issues"
+    "url": "https://github.com/a-onkar/cypress-typescript-circleci"
   },
-  "homepage": "https://github.com/a-onkar/w3w-technical-test-anand#readme",
+  "homepage": "https://github.com/a-onkar/cypress-typescript-circleci",
   "dependencies": {
     "cypress": "^8.3.0",
     "cypress-iframe": "^1.0.1",
